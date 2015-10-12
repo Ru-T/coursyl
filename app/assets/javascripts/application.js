@@ -22,3 +22,7 @@ function disableSaveButton() {
 function hideLastRow() {
   document.getElementsByClassName("row")[5].style.display = "none";
 }
+
+function showLastRow() {
+  document.getElementsByClassName("row")[5].style.display = "";
+}
