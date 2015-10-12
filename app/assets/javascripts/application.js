@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require d3
 //= require_tree .
+
+function disableSaveButton() {
+  document.getElementsByName("commit")[0].disabled = true;
+}
+
+function hideLastRow() {
+  document.getElementsByClassName("row")[5];
+}
