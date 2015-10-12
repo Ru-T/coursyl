@@ -20,9 +20,15 @@ function disableSaveButton() {
 }
 
 function hideLastRow() {
-  document.getElementsByClassName("row")[5].style.display = "none";
+  var lastRow = document.getElementsByClassName("row")
+  lastRow[lastRow.length-1].style.display = 'none';
 }
 
 function showLastRow() {
-  document.getElementsByClassName("row")[5].style.display = "";
+  var lastRow = document.getElementsByClassName("row")
+  lastRow[lastRow.length-1].style.display = 'block';
+}
+
+function hideDeletedRow() {
+  document.getElementsByClassName("row")
 }
