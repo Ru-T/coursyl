@@ -30,8 +30,23 @@ function showLastRow() {
 }
 
 function hideDeletedRow() {
-  var hideRow = event.target.parentElement.parentElement.parentElement;
-  var markDestroy = event.target.parentElement.lastElementChild;
+  var hideRow = event.target.parentElement.parentElement.parentElement; //association_container
+  var markDestroyTrue = event.target.parentElement.lastElementChild; //checkbox for destroy (hidden)
   hideRow.style.display = "none";
-  markDestroy.checked = true;
+  markDestroyTrue.checked = true;
 }
+
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});

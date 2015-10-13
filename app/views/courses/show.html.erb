@@ -2,10 +2,8 @@
 
 <%= render partial: "summary_box", locals: {course: @course, :header => true} %>
 
-
-
-
 <section id="first-section">
+
   <a id="anchor-description" class="anchor-course"></a>
   <% if current_user && current_user.teaching?(@course) %>
     <h3 class="float-right float-right-header"><%= link_to 'Edit Course Details', edit_course_path(@course), class: "btn" %></h3>
