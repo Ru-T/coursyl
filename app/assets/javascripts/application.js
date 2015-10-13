@@ -16,8 +16,14 @@
 //= require_tree .
 
 function disableSaveButton() {
-  document.getElementsByName("commit")[0].disabled = true;
+  $(".btn").last().prop("disabled", true);
 }
+
+$(function (){
+  $(".btn").last.on("click", disableSaveButton);
+});
+
+// jQuery below
 
 function hideLastRow() {
   last = $(".association.container").last()
@@ -35,6 +41,9 @@ function showLastRow() {
 $(function (){
   $(".new-association").on("click", showLastRow);
 });
+
+
+// jQuery above
 
 function hideDeletedRow(button) {
   var hideRow = button.parentElement.parentElement.parentElement; //association_container
