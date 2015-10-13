@@ -17,13 +17,12 @@
 
 function disableSaveButton() {
   $(".btn").last().prop("disabled", true);
+  $("form").submit();
 }
 
 $(function (){
-  $(".btn").last.on("click", disableSaveButton);
+  $(".btn").last().on("click", disableSaveButton);
 });
-
-// jQuery below
 
 function hideLastRow() {
   last = $(".association.container").last()
