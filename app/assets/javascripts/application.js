@@ -15,13 +15,13 @@
 //= require d3
 //= require_tree .
 
-function disableSaveButton() {
-  $(".btn").last().prop("disabled", true);
-  $("form").submit();
-}
+// function disableSaveButton() {
+//   $("input[type=submit]").prop("disabled", true);
+//   $("form").submit();
+// }
 
 $(function (){
-  $(".btn").last().on("click", disableSaveButton);
+  $("input[type=submit]").on("click", disableSaveButton);
 });
 
 function hideLastRow() {
@@ -40,13 +40,6 @@ function showLastRow() {
 $(function (){
   $(".new-association").on("click", showLastRow);
 });
-
-function hideDeletedRow(button) {
-  var hideRow = $(".btn").closest(".association");
-  var markDestroy = $(hideRow).find(".checkbox");
-  hideRow.hide();
-  markDestroy.checked();
-}
 
 $(function() {
   $('a[href*=#]:not([href=#])').click(function() {

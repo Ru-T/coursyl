@@ -76,7 +76,6 @@
               <%= link_to '<i class="fa fa-times-circle-o" title="Remove Student from Course"></i>'.html_safe, cs, method: :delete,
                 data: { confirm: "Are you sure that you would like to remove #{student.full_name} from the course?" } %>
             </td>
-            <td>   <i class="fa fa--calendar-plus-o" title="Change Dates"></i>
             </td>
           </tr>
         <% end %>
@@ -205,6 +204,7 @@
             <td><%= percentage(a.percent_of_grade) %></td>
             <td class="text-right">
               <%= render partial: "/assignments/row_buttons", locals: {assignment: a} %>
+              <%= render partial: "/assignments/due_date_modal", locals: {assignment: a} %>
             </td>
           </tr>
         <% end %>
