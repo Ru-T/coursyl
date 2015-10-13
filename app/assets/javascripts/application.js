@@ -20,14 +20,21 @@ function disableSaveButton() {
 }
 
 function hideLastRow() {
-  $(".association.container").last().css("display", "none");
+  last = $(".association.container").last()
+  if(last) {
+    $(".association.container").last().hide(); // only do this at the right moment
+  }
+  //css("display", "none");
   // var lastRow = document.getElementsByClassName("row");
   // lastRow[lastRow.length-1].style.display = 'none';
 }
 
+$(hideLastRow); // when page is done loading, run this function
+
 function showLastRow() {
-  var lastRow = document.getElementsByClassName("row");
-  lastRow[lastRow.length-1].style.display = 'block';
+  $(".association.container").last().show();
+  // var lastRow = document.getElementsByClassName("row");
+  // lastRow[lastRow.length-1].style.display = 'block';
 }
 
 function hideDeletedRow(button) {
