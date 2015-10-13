@@ -29,9 +29,9 @@ function showLastRow() {
   lastRow[lastRow.length-1].style.display = 'block';
 }
 
-function hideDeletedRow() {
-  var hideRow = event.target.parentElement.parentElement.parentElement; //association_container
-  var markDestroyTrue = event.target.parentElement.lastElementChild; //checkbox for destroy (hidden)
+function hideDeletedRow(button) {
+  var hideRow = button.parentElement.parentElement.parentElement; //association_container
+  var markDestroyTrue = button.parentElement.lastElementChild; //checkbox for destroy (hidden)
   hideRow.style.display = "none";
   markDestroyTrue.checked = true;
 }
