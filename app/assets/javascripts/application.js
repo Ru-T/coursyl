@@ -22,20 +22,19 @@ function disableSaveButton() {
 function hideLastRow() {
   last = $(".association.container").last()
   if(last) {
-    $(".association.container").last().hide(); // only do this at the right moment
+    last.hide(); // only do this at the right moment
   }
-  //css("display", "none");
-  // var lastRow = document.getElementsByClassName("row");
-  // lastRow[lastRow.length-1].style.display = 'none';
 }
 
 $(hideLastRow); // when page is done loading, run this function
 
 function showLastRow() {
   $(".association.container").last().show();
-  // var lastRow = document.getElementsByClassName("row");
-  // lastRow[lastRow.length-1].style.display = 'block';
 }
+
+$(function (){
+  $(".new-association").on("click", showLastRow);
+});
 
 function hideDeletedRow(button) {
   var hideRow = button.parentElement.parentElement.parentElement; //association_container
