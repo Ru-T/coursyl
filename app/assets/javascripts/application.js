@@ -46,8 +46,9 @@ $(function (){
 });
 
 function hideDeletedRow(button) {
-  $(".delete-association").closest(".association").hide();
-  $("input[class=destroy]").checked;
+  $(this).closest(".association.container").hide();
+  $(this).closest(".destroy").prop("checked", true);
+  event.preventDefault();
 }
 
 $(function (){
