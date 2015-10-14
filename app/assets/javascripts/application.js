@@ -16,7 +16,7 @@
 //= require_tree .
 
 // function disableSaveButton() {
-//   $("input[type=submit]").prop("disabled", true);
+//   $("input[nane=commit]").prop("disabled", true);
 //   $("form").submit();
 // }
 
@@ -39,6 +39,17 @@ function showLastRow() {
 
 $(function (){
   $(".new-association").on("click", showLastRow);
+});
+
+function hideDeletedRow(button) {
+  hideRow = $(".delete-association").closest(".association");
+  markDestroy = $("input[class=destroy]");
+  hideRow.hide();
+  markDestroy.checked;
+}
+
+$(function (){
+  $(".delete-association").on("click", hideDeletedRow);
 });
 
 $(function() {

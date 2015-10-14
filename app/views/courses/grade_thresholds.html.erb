@@ -36,7 +36,7 @@
           <div class="span1">
             <% if ff.object.persisted? %>
               <%= link_to 'Delete', "javascript:void(0)", class: "btn btn-danger delete-association" %>
-              <%= ff.check_box :_destroy, class: "destroy", hidden: true %>
+              <%= ff.check_box :_destroy, class: "destroy"%>
             <% else %>
               <%= link_to 'Delete', "javascript:void(0)", class: "btn btn-danger flush-association" %>
             <% end %>
