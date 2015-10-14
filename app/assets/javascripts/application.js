@@ -13,15 +13,19 @@
 //= require jquery
 //= require jquery_ujs
 //= require d3
+//= require jquery.datetimepicker
+//= require jquery.datetimepicker/init
 //= require_tree .
 
-// function disableSaveButton() {
-//   $("input[nane=commit]").prop("disabled", true);
-//   $("form").submit();
-// }
+$('.datetimepicker').datetimepicker();
+
+function updateCourse() {
+  $(event.target).prop("disabled", true);
+  $(event.target).closest("form").submit();
+}
 
 $(function (){
-  $("input[type=submit]").on("click", disableSaveButton);
+  $("input[type=submit]").on("click", updateCourse);
 });
 
 function hideLastRow() {
@@ -42,27 +46,30 @@ $(function (){
 });
 
 function hideDeletedRow(button) {
-  hideRow = $(".delete-association").closest(".association");
-  markDestroy = $("input[class=destroy]");
-  hideRow.hide();
-  markDestroy.checked;
+  $(".delete-association").closest(".association").hide();
+  $("input[class=destroy]").checked;
 }
 
 $(function (){
   $(".delete-association").on("click", hideDeletedRow);
 });
 
-$(function() {
-  $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return false;
-      }
-    }
-  });
-});
+// function topModal() {
+//   $('#super_modal').modal('show')
+// }
+
+
+// $(function() {
+//   $('a[href*=#]:not([href=#])').click(function() {
+//     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+//       var target = $(this.hash);
+//       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+//       if (target.length) {
+//         $('html,body').animate({
+//           scrollTop: target.offset().top
+//         }, 1000);
+//         return false;
+//       }
+//     }
+//   });
+// });
